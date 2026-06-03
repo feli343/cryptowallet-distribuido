@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CryptoWallet - Consulta de Carteira</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main class="container">
+        <section class="card">
+            <div class="topo">
+                <div>
+                    <p class="tag">CryptoSpace</p>
+                    <h1>CryptoWallet</h1>
+                    <p class="descricao">Consulta distribuída de carteira Bitcoin usando JSON-RPC e Java RMI.</p>
+                </div>
+            </div>
+
+            <form id="form-consulta" class="formulario">
+                <label for="hash">Hash da carteira</label>
+                <div class="linha-input">
+                    <input
+                        type="text"
+                        id="hash"
+                        name="hash"
+                        value="1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa"
+                        placeholder="Digite o hash da carteira"
+                        autocomplete="off"
+                        required
+                    />
+                    <button type="submit">Buscar</button>
+                </div>
+            </form>
+
+            <section id="mensagem" class="mensagem escondido"></section>
+
+            <section id="resultado" class="resultado escondido">
+                <div class="saldo-box">
+                    <p>Saldo total</p>
+                    <strong id="saldo-total">0 BTC</strong>
+                    <span id="hash-consultado"></span>
+                </div>
+
+                <h2>Últimas transações</h2>
+                <div class="tabela-area">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Tipo</th>
+                                <th>Valor BTC</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lista-transacoes"></tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
